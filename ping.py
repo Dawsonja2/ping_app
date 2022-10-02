@@ -25,7 +25,8 @@ def get_pw(username):
 @auth.login_required
 def ping():
     start = time.perf_counter()
-    response = requests.get("http://127.0.0.1:5000/pong")
+    response = requests.get(
+        "https://ping-service-app-jared-dawson.herokuapp.com/ping")
     request_time = time.perf_counter() - start
     return "Request completed in {0:.0f}ms".format(request_time)
 
